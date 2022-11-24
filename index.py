@@ -3,10 +3,28 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route('/')
 def home():
-    return "<h2>Flask Vercel</h2>"
+    return 'Home Page Route - nice work Andrew!!!'
 
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080)
+@app.route('/about')
+def about():
+    return 'About Page Route'
+
+
+@app.route('/portfolio')
+def portfolio():
+    return 'Portfolio Page Route'
+
+
+@app.route('/contact')
+def contact():
+    return 'Contact Page Route'
+
+
+@app.route('/api')
+def api():
+    with open('data.json', mode='r') as my_file:
+        text = my_file.read()
+        return text
