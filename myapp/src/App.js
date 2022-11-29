@@ -6,7 +6,7 @@ function App() {
 
   useEffect(
         () => {
-            fetch(`http://localhost:8080/`)
+            fetch(`https://test-fawn-mu.vercel.app/`)
             .then(response=>response.json())
             .then(data=>console.log(data))
         },
@@ -15,7 +15,7 @@ function App() {
 
     useEffect(
       () => {
-          fetch(`http://localhost:8080/portfolio`,
+          fetch(`https://test-fawn-mu.vercel.app/portfolio`,
           {method: 'POST',
             body: JSON.stringify({
             'a':12
