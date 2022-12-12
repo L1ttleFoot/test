@@ -1,5 +1,9 @@
 from flask import Flask, jsonify
+import os
 
+absolute_path = os.path.dirname(__file__)
+relative_path = "tmp"
+full_path = os.path.join(absolute_path, relative_path)
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -36,6 +40,14 @@ def api():
     with open('data.json', mode='r') as my_file:
         text = my_file.read()
         return text
+
+@app.route('/api2')
+def api():
+    f=open(f'{full_path}/const_new.py','w')
+    f.write('test')
+    f.close()
+
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
