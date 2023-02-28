@@ -48,7 +48,7 @@ def get_file():
     f.write('test')
     f.close()
 
-    #return send_file(f'{full_path}/const.py', )
+    return send_file(f'/tmp/const.py', )
 
 
 if __name__ == "__main__":
