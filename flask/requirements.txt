@@ -10,3 +10,4 @@ numpy==1.23.5
 sympy==1.11.1
 Werkzeug==2.2.2
 zipp==3.10.0
+flask_cors==3.0.10
