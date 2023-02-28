@@ -44,7 +44,7 @@ def api():
 
 @app.route('/get_file')
 def get_file():
-    f = open(f'{full_path}/const.py', 'w')
+    f = open('/tmp/const.py', 'w')
     f.write('test')
     f.close()
 
