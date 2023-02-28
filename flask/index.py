@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_file
 import os
 
 absolute_path = os.path.dirname(__file__)
@@ -41,11 +41,13 @@ def api():
         text = my_file.read()
         return text
 
-@app.route('/api2')
-def api():
+@app.route('/get_file')
+def get_file():
     f=open(f'{full_path}/const_new.py','w')
     f.write('test')
     f.close()
+
+    return send_file(f'{full_path}/const.py',)
 
 
 

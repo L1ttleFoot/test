@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {React, useEffect} from 'react'
+import { saveAs } from 'file-saver';
 
 function App() {
 
@@ -27,6 +28,20 @@ function App() {
       [],
   );
 
+  const test = async () => {
+
+    await fetch(`https://test-fawn-mu.vercel.app/api/v1/get_file`)
+    //await fetch(`http://localhost:8080/api/v1/get_file`,
+    .then(response => 
+        response.blob())
+    .then(myBlob => 
+        saveAs(myBlob,'test.py'))
+    .catch(error => {
+        console.log(error)
+    });
+
+};
+
   return (
     <div className="App">
       <header className="App-header">
@@ -34,6 +49,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <button onClick={test}>TEST</button>
+
         <a
           className="App-link"
           href="https://reactjs.org"
