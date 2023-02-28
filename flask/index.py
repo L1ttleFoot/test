@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, send_file
 import os
 
-absolute_path = os.path.dirname(__file__)
+absolute_path = os.path.dirname(os.path.dirname(__file__))
 relative_path = "tmp"
 full_path = os.path.join(absolute_path, relative_path)
 
