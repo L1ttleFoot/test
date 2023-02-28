@@ -30,7 +30,7 @@ function App() {
 
   const test = async () => {
 
-    await fetch(`https://test-fawn-mu.vercel.app/api/v1/get_file`)
+    await fetch(`https://test-fawn-mu.vercel.app/get_file`)
     //await fetch(`http://localhost:8080/api/v1/get_file`,
     .then(response => 
         response.blob())
