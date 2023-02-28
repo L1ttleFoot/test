@@ -27,7 +27,7 @@ def about():
 def portfolio():
     response = jsonify('Portfolio Page Route')
     response.headers.add("Access-Control-Allow-Origin", "*")
-    return response 
+    return response
 
 
 @app.route('/contact')
@@ -41,14 +41,14 @@ def api():
         text = my_file.read()
         return text
 
+
 @app.route('/get_file')
 def get_file():
-    f=open(f'{full_path}/const_new.py','w')
+    f = open(f'{full_path}/const.py', 'w')
     f.write('test')
     f.close()
 
-    return send_file(f'{full_path}/const.py',)
-
+    #return send_file(f'{full_path}/const.py', )
 
 
 if __name__ == "__main__":
