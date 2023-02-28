@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, send_file
+from flask_cors import CORS
 import os
 
 absolute_path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -6,7 +7,9 @@ relative_path = "tmp"
 full_path = os.path.join(absolute_path, relative_path)
 
 app = Flask(__name__)
-app.config["DEBUG"] = True
+CORS(app)
+app.config["DEBUG"] = False
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/')

@@ -30,15 +30,15 @@ function App() {
 
   const test = async () => {
 
-    await fetch(`https://test-fawn-mu.vercel.app/get_file`)
-    //await fetch(`http://localhost:8080/api/v1/get_file`,
-    .then(response => 
-        response.blob())
-    .then(myBlob => 
-        saveAs(myBlob,'test.py'))
-    .catch(error => {
-        console.log(error)
-    });
+        await fetch(`https://test-fawn-mu.vercel.app/get_file`)
+        //await fetch(`http://localhost:8080/api/v1/get_file`,
+        .then(response =>
+            response.blob())
+        .then(myBlob =>
+            saveAs(myBlob,'test.py'))
+        .catch(error => {
+            console.log(error)
+        });
 
 };
 
